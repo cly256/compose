@@ -3,7 +3,7 @@ services:
   v2raya:  
     image: mzz2017/v2raya  
     container_name: v2raya  
-    network_mode: host  
+    network_mode: hos1
     volumes:  
       - /lib/modules:/lib/modules:ro  
       - /etc/resolv.conf:/etc/resolv.conf  
