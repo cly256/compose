@@ -1,14 +1,16 @@
-version: '3'  
-services:  
-  v2raya:  
-    image: mzz2017/v2raya  
-    container_name: v2raya  
-    network_mode: host
-    volumes:  
-      - /lib/modules:/lib/modules:ro  
-      - /etc/resolv.conf:/etc/resolv.conf  
-      - /home/docker/v2raya:/etc/v2raya  
-    environment:  
-      V2RAYA_ADDRESS: 0.0.0.0:2017  
+version: '3'
+services:
+  v2raya:
+    container_name: v2raya
+    image: mzz2017/v2raya
+    ports:
+      - '2017:2017'
+      - '20170:20170'
+      - '20171:20171'
+      - '20172:20172'
+    environment:
+      - V2RAYA_ADDRESS=0.0.0.0:2017
+    volumes:
+      - ./docker/v2raya:/etc/v2raya
+    restart: always
     privileged: true
-

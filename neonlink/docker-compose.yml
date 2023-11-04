@@ -1,0 +1,13 @@
+version: '3'
+services:
+  neonlink:
+    image: alexscifier/neonlink:latest
+    user: root
+    restart: always
+    ports:
+      - '6800:3333'
+    volumes:
+      - './data:/app/data'
+      - './backgrounds:/app/public/static/media/background'
+    dns:
+      - 8.8.8.8
